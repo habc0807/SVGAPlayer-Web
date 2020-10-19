@@ -82,7 +82,7 @@ SVGAPlayer 2.0.0 同时支持以下游戏引擎使用
 var player = new SVGA.Player('#demoCanvas');
 var parser = new SVGA.Parser('#demoCanvas'); // 如果你需要支持 IE6+，那么必须把同样的选择器传给 Parser。
 parser.load('rose_2.0.0.svga', function(videoItem) {
-    player.setVideoItem(videoItem);
+    player.setVideoItem(videoItem); // setVideoItem 操作必须在 startAnimation 之前执行，保证这两句代码的执行顺序
     player.startAnimation();
 })
 ```
